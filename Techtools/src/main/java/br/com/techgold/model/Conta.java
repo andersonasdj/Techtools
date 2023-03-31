@@ -16,7 +16,7 @@ public class Conta {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String nome;
+	private String nomeExibicao;
 	private String email;
 	@Column(name = "statusCaixa", length = 30)
 	private String statusCaixa;
@@ -44,13 +44,13 @@ public class Conta {
 	public Conta() {
 	}
 
-	public Conta(Long id, String nome, String email, String statusCaixa, String tipoDeCaixa, String loginBloqueado,
-			String statusMfa, String metodoPadraoMfa, String mfaCelular, String criacao, String alteracaoSenha,
-			String ultimoLogin, String smtp, String aliases, String licenca, String qtdItens, String volumeCaixa,
-			String statusArquivoMorto, String volumeArquivoMorto, String marcaRetencao, String statusAutoExpanssaoMorto,
-			String cotaCaixa) {
+	public Conta(Long id, String nomeExibicao, String email, String statusCaixa, String tipoDeCaixa,
+			String loginBloqueado, String statusMfa, String metodoPadraoMfa, String mfaCelular, String criacao,
+			String alteracaoSenha, String ultimoLogin, String smtp, String aliases, String licenca, String qtdItens,
+			String volumeCaixa, String statusArquivoMorto, String volumeArquivoMorto, String marcaRetencao,
+			String statusAutoExpanssaoMorto, String cotaCaixa) {
 		this.id = id;
-		this.nome = nome;
+		this.nomeExibicao = nomeExibicao;
 		this.email = email;
 		this.statusCaixa = statusCaixa;
 		this.tipoDeCaixa = tipoDeCaixa;
@@ -74,7 +74,7 @@ public class Conta {
 	}
 
 	public Conta(ContaDto dados) {
-		this.nome = dados.nome();
+		this.nomeExibicao = dados.nomeExibicao();
 		this.email = dados.email();
 		this.statusCaixa = dados.statusCaixa();
 		this.tipoDeCaixa = dados.tipoDeCaixa();
@@ -105,12 +105,28 @@ public class Conta {
 		this.id = id;
 	}
 
-	public String getNome() {
-		return nome;
+	public String getNomeExibicao() {
+		return nomeExibicao;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setNomeExibicao(String nomeExibicao) {
+		this.nomeExibicao = nomeExibicao;
+	}
+
+	public String getStatusMfa() {
+		return statusMfa;
+	}
+
+	public void setStatusMfa(String statusMfa) {
+		this.statusMfa = statusMfa;
+	}
+
+	public String getMetodoPadraoMfa() {
+		return metodoPadraoMfa;
+	}
+
+	public void setMetodoPadraoMfa(String metodoPadraoMfa) {
+		this.metodoPadraoMfa = metodoPadraoMfa;
 	}
 
 	public String getEmail() {
